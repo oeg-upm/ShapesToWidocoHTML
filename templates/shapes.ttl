@@ -1,0 +1,449 @@
+@prefix :      <http://iot.linkeddata.es/def/wot#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix om18:  <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix wot:   <http://xmlns.com/wot/0.1/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#204757dff660ac59869138b8df502650>
+        a               sh:PropertyShape ;
+        rdfs:label      "name"@en , "General attribute for names assigned to any type of concept" ;
+        sh:datatype     xsd:string ;
+        sh:description  "General attribute for names assigned to any type of concept" ;
+        sh:name         "name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :name ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#404752f1a10305139f431a1dcf332dac>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:boolean ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isWritable .
+
+<https://astrea.linkeddata.es/shapes#9b83ab16c97e9c8bdf10d071c2776002>
+        a            sh:PropertyShape ;
+        sh:class     om18:Unit_of_measure ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isMeasuredIn .
+
+<https://astrea.linkeddata.es/shapes#94ef15d9485b56643ddaef4435b4ec56>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.wurvoc.org/vocabularies/om-1.8/" ;
+        rdfs:label        "Unit of measure"@en ;
+        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example, Temperature is a property and centigrade (or Celsius) is a unit of temperature that represents a definite predetermined temperature: when we say 20 centigrade, we actually mean 20 times the definite predetermined temperature unit called \"centigrade\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). (Definition adapted from SAREF ontology)"@en , "A unit of measure is a definite magnitude of a quantity, defined and adopted by convention and/or by law. It is used as a standard for measurement of the same quantity, where any other value of the quantity can be expressed as a simple multiple of the unit of measure. For example, length is a quantity; the metre is a unit of length that represents a definite predetermined length. When we say 10 metre (or 10 m), we actually mean 10 times the definite predetermined length called \"metre\". (definition taken from om ontology)"@en ;
+        sh:name           "Unit of measure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    om18:Unit_of_measure .
+
+<https://astrea.linkeddata.es/shapes#9729101e06843ef8782157f878647544>
+        a               sh:NodeShape ;
+        rdfs:label      "Interaction pattern"@en ;
+        sh:description  "An interaction in the context of the Web of Things is an exchange of data between a Web client and a Thing. This data can be either given as input by the client, returned as output by the Thing or both. Three interaction patterns have been defined so far: Property, Action and Event. (Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#interaction-patterns)"@en ;
+        sh:name         "Interaction pattern"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4cf16449cae640d91c6f8af5747ce7ae> , <https://astrea.linkeddata.es/shapes#84758aaa6a6dd9ce76b0a9a0145186f4> ;
+        sh:targetClass  :InteractionPattern .
+
+<https://astrea.linkeddata.es/shapes#8374652742878072b2d5d04038d51fb3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Title of an interaction pattern, aligment with \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en , "interaction pattern title"@en , "Name of an interaction pattern" , "interaction name"@en ;
+        sh:description  "Name of an interaction pattern" , "Title of an interaction pattern, aligment with \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en ;
+        sh:name         "interaction pattern title"@en , "interaction name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :interactionName .
+
+<https://astrea.linkeddata.es/shapes#11aa19982b05db516bdf4619f56dbab5>
+        a            sh:PropertyShape ;
+        sh:class     :DataSchema ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasOutputData .
+
+<https://astrea.linkeddata.es/shapes#037529678fab7af8bf0edaca21ae09f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "implements security"@en , "Links a given thing to the security information that indicates the access metadata information for securely transmitting information via all the resources of the thing."@en ;
+        sh:description  "Links a given thing to the security information that indicates the access metadata information for securely transmitting information via all the resources of the thing."@en ;
+        sh:name         "implements security"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :implementsSecurity .
+
+<https://astrea.linkeddata.es/shapes#81044c74b4d25d44cb185a7cf87712e8>
+        a               sh:NodeShape ;
+        rdfs:label      "Action"@en ;
+        sh:description  "The Action interaction pattern targets changes or processes on a Thing that take a certain time to complete (i.e., actions cannot be applied instantaneously like property writes). Examples include an LED fade in, moving a robot, brewing a cup of coffee, etc. Usually, ongoing Actions are modelled as Task resources, which are created when an Action invocation is received by the Thing. (Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#action)"@en ;
+        sh:name         "Action"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#939625f8b4cd6b492e35c27aa35ec4a1> , <https://astrea.linkeddata.es/shapes#cab7c4bcd305821205cda637f680f831> , <https://astrea.linkeddata.es/shapes#f85af83abb13f4ecaef7255191eace74> ;
+        sh:targetClass  :Action .
+
+<https://astrea.linkeddata.es/shapes#13258f9cce0bd70f16debe14b5f845f4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Boolean value that indicates whether a property is required to be present."@en , "is required"@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "Boolean value that indicates whether a property is required to be present."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is required"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         :isRequired ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#c3cf72d03b44d562031977ce47d05e3d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has output data"@en , "link to the n-ary class that allows the declaration of the data type and unit of measure provided by an interaction pattern."@en ;
+        sh:description  "link to the n-ary class that allows the declaration of the data type and unit of measure provided by an interaction pattern."@en ;
+        sh:name         "has output data"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasOutputData .
+
+<https://astrea.linkeddata.es/shapes#74b49bc808dec30741e3e1eb1ed53d1a>
+        a               sh:NodeShape ;
+        rdfs:label      "Thing"@en ;
+        sh:description  "An thing is anything (both physical and non-physical) which has a distinct and independent existence. Every thing has a unique identity. (Definition adapted from\nISO/IEC CC 30141. Information technology - Internet of Things Reference architecutre (IoT RA))"@en , "The abstract concept of a physical entity that can either be a real-world artifact, such as a device, or a virtual entity that represents physicality, such as a room or group of devices"@en ;
+        sh:name         "Thing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8521c2e706a9a73a1dffa21f87d1cf53> , <https://astrea.linkeddata.es/shapes#339f69a3218dc559d2565d4b5be8b469> , <https://astrea.linkeddata.es/shapes#2f89397e16b79c062b441238b5140074> , <https://astrea.linkeddata.es/shapes#0e7804f1d6428c1054bd3ad3daac08ae> ;
+        sh:targetClass  :Thing .
+
+<https://astrea.linkeddata.es/shapes#c93fb9c3234634ebc47a3284fecfb559>
+        a               sh:NodeShape ;
+        rdfs:label      "Link"@en ;
+        sh:description  "A URL where a service can be accessed by a client application. A service might have more than one link."@en ;
+        sh:name         "Link"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cc420b7f1a6418da8dfc95bcebf61b5f> , <https://astrea.linkeddata.es/shapes#2feaefdc8bd440cb94439a48c36e3248> , <https://astrea.linkeddata.es/shapes#d91d06c598eccc43d98cf424a7856f00> , <https://astrea.linkeddata.es/shapes#a79c2d6f1ef9d2d1098f6373fd8bd48f> , <https://astrea.linkeddata.es/shapes#5839affed1890a3ee1faa815818d72c4> ;
+        sh:targetClass  :Link .
+
+<https://astrea.linkeddata.es/shapes#566087cef85042fdc96aefcdcff31401>
+        a               sh:PropertyShape ;
+        rdfs:label      "has input data"@en , "link to the n-ary class that allows the declaration of the data type and unit of measure expected by an interaction pattern."@en ;
+        sh:description  "link to the n-ary class that allows the declaration of the data type and unit of measure expected by an interaction pattern."@en ;
+        sh:name         "has input data"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasInputData .
+
+<https://astrea.linkeddata.es/shapes#d46c1d2d0aad3b24ddf2403c7449482b>
+        a               sh:PropertyShape ;
+        rdfs:label      "describes thing"@en , "Link from a thing description to the thing being described"@en ;
+        sh:description  "Link from a thing description to the thing being described"@en ;
+        sh:name         "describes thing"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :describes .
+
+<https://astrea.linkeddata.es/shapes#339f69a3218dc559d2565d4b5be8b469>
+        a               sh:PropertyShape ;
+        rdfs:label      "base URI"@en , "Define base URI that is valid for all defined local interaction resources. All other URIs in the TD must then be resolved using the algorithm defined in [RFC3986]. This field is optional. (Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#thing-metadata)"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Define base URI that is valid for all defined local interaction resources. All other URIs in the TD must then be resolved using the algorithm defined in [RFC3986]. This field is optional. (Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#thing-metadata)"@en ;
+        sh:name         "base URI"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :baseURI ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3711f9dc17d2e719fe9a2db6b3b994d0>
+        a               sh:PropertyShape ;
+        rdfs:label      "thing name"@en , "Name of a thing" ;
+        sh:description  "Name of a thing" ;
+        sh:name         "thing name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :thingName .
+
+<https://astrea.linkeddata.es/shapes#a4e91e3a3c4e264db391db92f024f53b>
+        a               sh:NodeShape ;
+        rdfs:label      "Communication protocol"@en ;
+        sh:description  "A protocol is an agreement between the communicating parties on how communication is to proceed. (Definition taken from \"Tanenbaum, A. S. (2003). Computer networks, 4-th edition. ed: Prentice Hall.\")"@en ;
+        sh:name         "Communication protocol"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c0cf68af535d4ac32cfbf371e251b6d0> ;
+        sh:targetClass  :CommunicationProtocol .
+
+<https://astrea.linkeddata.es/shapes#a79c2d6f1ef9d2d1098f6373fd8bd48f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasInputData .
+
+<https://astrea.linkeddata.es/shapes#8d1391a88ab0ba69a0d1603724330083>
+        a               sh:PropertyShape ;
+        rdfs:label      "is writable"@en , "Boolean value that indicates whether a property is writable"@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "Boolean value that indicates whether a property is writable"@en ;
+        sh:maxCount     1 ;
+        sh:name         "is writable"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         :isWritable ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#64b4149699858bd25199ebaa2177102d>
+        a               sh:NodeShape ;
+        rdfs:label      "Data schema"@en ;
+        sh:description  "N-ary class defined to allow the representation of pairs (data type, unit of measure) that are expected as input data or output data of a given interaction pattern."@en ;
+        sh:name         "Data schema"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9b83ab16c97e9c8bdf10d071c2776002> , <https://astrea.linkeddata.es/shapes#70071cadd1cecf50284ed2d573e3fb40> ;
+        sh:targetClass  :DataSchema .
+
+<https://astrea.linkeddata.es/shapes#f955b95b2e189cf936f4b80d31447f79>
+        a               sh:NodeShape ;
+        rdfs:label      "MediaType"@en ;
+        sh:description  "Represent the label (estructured into trees) used to identify the content type os a particular protocols, including but not limited to HTTP [RFC2616] and MIME [RFC2045], which are capable of carrying arbitrary labeled content. (Definicion adapted from https://tools.ietf.org/html/rfc6838).\n\nThe location of the media type registry is http://www.iana.org/assignments/media-types/"@en ;
+        sh:name         "MediaType"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :MediaType .
+
+<https://astrea.linkeddata.es/shapes#88c0b4a33061095d8f49d284ac26187f>
+        a               sh:NodeShape ;
+        rdfs:label      "Event"@en ;
+        sh:description  "The Event interaction pattern enables a mechanism to be notified by a Thing on a certain condition. (Description taken from http://w3c.github.io/wot/current-practices/wot-practices#event)"@en ;
+        sh:name         "Event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#11aa19982b05db516bdf4619f56dbab5> ;
+        sh:targetClass  :Event .
+
+<https://astrea.linkeddata.es/shapes#b107b6070671cfcaf72fdda407278cf9>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:boolean ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isRequired .
+
+<https://astrea.linkeddata.es/shapes#2881a76dc44ce5bc48a302dcf4110b48>
+        a               sh:PropertyShape ;
+        rdfs:label      "is measured in"@en , "A relation between a measurement and the unit of measure in which the measurement value is expressed."@en ;
+        sh:description  "A relation between a measurement and the unit of measure in which the measurement value is expressed."@en ;
+        sh:name         "is measured in"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isMeasuredIn .
+
+<https://astrea.linkeddata.es/shapes#cc420b7f1a6418da8dfc95bcebf61b5f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :href .
+
+<https://astrea.linkeddata.es/shapes#f1305b6e8e5129ad04824ffacee9a31a>
+        a               sh:NodeShape ;
+        rdfs:label      "Security"@en ;
+        sh:description  "The (optional) security field can be used to provide access metadata (self-contained) information of the Thing for securely transmitting information via all its resources. Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#security"@en ;
+        sh:name         "Security"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Security .
+
+<https://astrea.linkeddata.es/shapes#0e7804f1d6428c1054bd3ad3daac08ae>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides interaction pattern"@en , "Link from a thing to the interaction patterns it provides"@en ;
+        sh:class        :InteractionPattern ;
+        sh:description  "Link from a thing to the interaction patterns it provides"@en ;
+        sh:name         "provides interaction pattern"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :providesInteractionPattern .
+
+<https://astrea.linkeddata.es/shapes#cab7c4bcd305821205cda637f680f831>
+        a            sh:PropertyShape ;
+        sh:class     :DataSchema ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasOutputData .
+
+<https://astrea.linkeddata.es/shapes#be567586bd692cfbbb88c03a362ecaa8>
+        a               sh:PropertyShape ;
+        rdfs:label      "is queueable"@en , "Boolean value that indicates whether a property is queueable, that is, whether there can be a queue of requests waiting to execute given action."@en ;
+        rdfs:seeAlso    "https://github.com/mariapoveda/wot-ontology/issues/43" ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "Boolean value that indicates whether a property is queueable, that is, whether there can be a queue of requests waiting to execute given action."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is queueable"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         :isQueueable ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#ac9bc02676e928856ac21eee1736dd04>
+        a            sh:PropertyShape ;
+        sh:class     :DataSchema ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasOutputData .
+
+<https://astrea.linkeddata.es/shapes#eb8a5b18b9393573d7f08a26327f6fbd>
+        a            sh:PropertyShape ;
+        rdfs:label   "providedBy"@en ;
+        sh:name      "providedBy"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :providedBy .
+
+<https://astrea.linkeddata.es/shapes#3be9753fb4c1fc0e2c4abfd31848781e>
+        a               sh:PropertyShape ;
+        rdfs:label      "interaction pattern description"@en , "Description of an interaction pattern, aligment with \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en ;
+        sh:description  "Description of an interaction pattern, aligment with \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en ;
+        sh:name         "interaction pattern description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :interactionDescription .
+
+<https://astrea.linkeddata.es/shapes#d91d06c598eccc43d98cf424a7856f00>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isProvidedOverProtocol .
+
+<https://astrea.linkeddata.es/shapes#8521c2e706a9a73a1dffa21f87d1cf53>
+        a            sh:PropertyShape ;
+        sh:class     :InteractionPattern ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :providesInteractionPattern .
+
+<https://astrea.linkeddata.es/shapes#31dd87237489739e320b3f1aba888a9d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has media type"@en , "link to the media types sopported by an endpoint"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "link to the media types sopported by an endpoint"@en ;
+        sh:name         "has media type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :hasMediaType ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#8abe49966a05ab6b60cbb2e70af131c7>
+        a            sh:PropertyShape ;
+        rdfs:label   "is writable through"@en ;
+        sh:name      "is writable through"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :isWritableThrough .
+
+<https://astrea.linkeddata.es/shapes#2f89397e16b79c062b441238b5140074>
+        a            sh:PropertyShape ;
+        sh:class     :Link ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isAccessibleThrough .
+
+<https://astrea.linkeddata.es/shapes#70071cadd1cecf50284ed2d573e3fb40>
+        a            sh:PropertyShape ;
+        sh:class     :DataType ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasValueType .
+
+<https://astrea.linkeddata.es/shapes#ee6922777c7343eddbf8ff4eb1fe62bd>
+        a               sh:PropertyShape ;
+        rdfs:label      "has value type"@en , "Link to the data type used for the values provided following a given data format"@en ;
+        sh:description  "Link to the data type used for the values provided following a given data format"@en ;
+        sh:name         "has value type"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasValueType .
+
+<https://astrea.linkeddata.es/shapes#2feaefdc8bd440cb94439a48c36e3248>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasOutputData .
+
+<https://astrea.linkeddata.es/shapes#a39b0ada6f9dbe7c40b10583848a9215>
+        a            sh:PropertyShape ;
+        rdfs:label   "defaultValue"@en ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "defaultValue"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :defaultValue .
+
+<https://astrea.linkeddata.es/shapes#4adcb233a3d109d0de01b94d026cc922>
+        a               sh:PropertyShape ;
+        rdfs:label      "is accessible through"@en , "Indicates the endpoints from which an interaction pattern is accessible"@en ;
+        sh:description  "Indicates the endpoints from which an interaction pattern is accessible"@en ;
+        sh:name         "is accessible through"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isAccessibleThrough .
+
+<https://astrea.linkeddata.es/shapes#4424c03c57781232765ec49ce4cedeec>
+        a               sh:PropertyShape ;
+        rdfs:label      "is readable through"@en , "Indicates the endpoints from which an interaction pattern can be read."@en ;
+        sh:description  "Indicates the endpoints from which an interaction pattern can be read."@en ;
+        sh:name         "is readable through"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isReadableThrough .
+
+<https://astrea.linkeddata.es/shapes#939625f8b4cd6b492e35c27aa35ec4a1>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:boolean ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isQueueable .
+
+<https://astrea.linkeddata.es/shapes#f85af83abb13f4ecaef7255191eace74>
+        a            sh:PropertyShape ;
+        sh:class     :DataSchema ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasInputData .
+
+<https://astrea.linkeddata.es/shapes#619fdc18004df228c9e1b84fcff5ac96>
+        a               sh:PropertyShape ;
+        rdfs:label      "is described by"@en , "Relation from a thing to its thing descriptions"@en ;
+        sh:description  "Relation from a thing to its thing descriptions"@en ;
+        sh:name         "is described by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isDescribedBy .
+
+<https://astrea.linkeddata.es/shapes#242ed5e856bf6d6ebcc642464de9319d>
+        a               sh:NodeShape ;
+        rdfs:label      "Property"@en ;
+        sh:description  "Property provides readable and/or writeable data that can be static (e.g., supported mode, rated output voltage, etc.) or dynamic (e.g., current fill level of water, minimum recorded temperature, etc.).  (Definition taken from http://w3c.github.io/wot/current-practices/wot-practices#property)"@en ;
+        sh:name         "Property"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#404752f1a10305139f431a1dcf332dac> , <https://astrea.linkeddata.es/shapes#b107b6070671cfcaf72fdda407278cf9> , <https://astrea.linkeddata.es/shapes#ac9bc02676e928856ac21eee1736dd04> ;
+        sh:targetClass  :Property .
+
+<https://astrea.linkeddata.es/shapes#0b3a63e600ae8fa51eed8044e6f46ce5>
+        a               sh:PropertyShape ;
+        rdfs:label      "has priority endpoint"@en , "Priority endpoint representation of \"pri\" field for endpoints in \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en ;
+        sh:description  "Priority endpoint representation of \"pri\" field for endpoints in \"(IoT) DIS 30118-1 - Text for ISO/IEC DIS 30118-1, Information technology â€” Open Connectivity Foundation â€” Part 1: Core specification\""@en ;
+        sh:name         "has priority endpoint"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasPriorityEndpoint .
+
+<https://astrea.linkeddata.es/shapes#8b8c319fa5d8fff405aeb62bb3316950>
+        a               sh:PropertyShape ;
+        rdfs:label      "URI of the endpoint where an interaction pattern is provided"@en , "href"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "URI of the endpoint where an interaction pattern is provided"@en ;
+        sh:maxCount     1 ;
+        sh:name         "href"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         :href ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#84758aaa6a6dd9ce76b0a9a0145186f4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isAccessibleThrough .
+
+<https://astrea.linkeddata.es/shapes#9944a985c31f41bf2ee69e9a3896134d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is provided over protocol"@en , "Relates an endpoint with the communication protocol it is served over. A given endpoint can be provided over at most one protocol."@en ;
+        sh:description  "Relates an endpoint with the communication protocol it is served over. A given endpoint can be provided over at most one protocol."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is provided over protocol"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         :isProvidedOverProtocol .
+
+<https://astrea.linkeddata.es/shapes#c0cf68af535d4ac32cfbf371e251b6d0>
+        a         sh:PropertyShape ;
+        sh:class  :Property .
+
+<https://astrea.linkeddata.es/shapes#4cf16449cae640d91c6f8af5747ce7ae>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :interactionName .
+
+<https://astrea.linkeddata.es/shapes#5839affed1890a3ee1faa815818d72c4>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasMediaType .
+
+<https://astrea.linkeddata.es/shapes#fb1519b4064829a416467dadab0fc087>
+        a               sh:NodeShape ;
+        rdfs:label      "Data type"@en ;
+        rdfs:seeAlso    "https://www.iso.org/obp/ui/#iso:std:iso-iec:11404:ed-2:v1:en"@en ;
+        sh:description  "Set of distinct values, characterized by properties of those values, and by operations on those values (definition taken from ISO/IEC 11404:2007)"@en ;
+        sh:name         "Data type"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :DataType .

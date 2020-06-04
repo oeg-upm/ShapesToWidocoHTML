@@ -1,0 +1,73 @@
+/*Fichero creado para añadir estilo a la parte de validacion*/
+
+/*Estilo cuadro para ingresar la validación*/
+#divValid {
+  background-color: #F0F0F0;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+/*Estilo para input y texto*/
+#labelValid {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.labelResponse {
+  margin-left: 10px;
+}
+
+#validationResponse{
+  margin-left: 25px;
+}
+
+#divResponse {
+  background-color: #f4ffff;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 15px;
+}
+
+.inp {
+  margin-bottom: 15px;
+  margin-left: 8px;
+}
+
+/*Estilo explicación del campo Coverage*/
+.spanExp {
+  margin-left: 10px;
+}
+
+/*Estilo caja de texto para ingresar data*/
+#textdata {
+  border-radius: 6px;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+/*Estilo para boton de validar*/
+.buttonS {
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #005A9C;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.buttonS:hover {
+  background-color: navy;
+}
+
+/*Estilo de título y caja de texto para ingresar las reglas*/
+#textrules {
+  border-radius: 6px;
+  padding: 8px;
+  background-color: #f4ffff;
+  font-size: 15px;
+}
+
